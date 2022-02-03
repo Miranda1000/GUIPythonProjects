@@ -102,6 +102,8 @@ def timer(input_array, window_container):
         timer_text_seconds = tk.Label(window_container, textvariable=output, padx=10, pady=20,
                                       font=('Arial', 24, 'bold'))
         timer_text_seconds.grid(row=9, column=0, columnspan=2, sticky='W')
+        # Update the container (otherwise the changes will not be visible as Tkinter doesn't update automatically
+        # in a for loop
         window_container.update()
         # Remove the instance of timer_text_seconds
         timer_text_seconds.destroy()
